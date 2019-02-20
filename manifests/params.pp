@@ -52,7 +52,7 @@ class mysql::params {
         }
         /^(RedHat|CentOS|Scientific|OracleLinux)$/: {
           if versioncmp($::operatingsystemmajrelease, '7') >= 0 {
-            $provider = 'mariadb'
+            $provider = 'mysql' # rdagum: hardcoded to allow install of mysql on CentOS 7
           } else {
             $provider = 'mysql'
           }
